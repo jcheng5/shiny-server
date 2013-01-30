@@ -142,6 +142,10 @@
             
               <li><a href="#location">location</a></li>
             
+              <li><a href="#startup_timeout">startup_timeout</a></li>
+            
+              <li><a href="#shutdown_delay">shutdown_delay</a></li>
+            
               <li><a href="#site_dir">site_dir</a></li>
             
               <li><a href="#directory_index">directory_index</a></li>
@@ -502,7 +506,83 @@ server {
             <label>Applies to:</label> <code><a href="#server">server</a></code><br/>
             <label>Inheritable:</label> Yes<br/>
             
-              <label>Child directives:</label> <code><a href="#run_as">run_as</a></code>, <code><a href="#site_dir">site_dir</a></code>, <code><a href="#directory_index">directory_index</a></code>, <code><a href="#user_apps">user_apps</a></code>, <code><a href="#app_dir">app_dir</a></code>, <code><a href="#redirect">redirect</a></code>, <code><a href="#log_dir">log_dir</a></code>, <code><a href="#members_of">members_of</a></code>, <code><a href="#google_analytics_id">google_analytics_id</a></code><br/>
+              <label>Child directives:</label> <code><a href="#run_as">run_as</a></code>, <code><a href="#startup_timeout">startup_timeout</a></code>, <code><a href="#shutdown_delay">shutdown_delay</a></code>, <code><a href="#site_dir">site_dir</a></code>, <code><a href="#directory_index">directory_index</a></code>, <code><a href="#user_apps">user_apps</a></code>, <code><a href="#app_dir">app_dir</a></code>, <code><a href="#redirect">redirect</a></code>, <code><a href="#log_dir">log_dir</a></code>, <code><a href="#members_of">members_of</a></code>, <code><a href="#google_analytics_id">google_analytics_id</a></code><br/>
+            
+          </p>
+        </li>
+      
+        <li>
+          <h3 class="code"><a name="startup_timeout"></a>startup_timeout</h3>
+          <p class="desc">Controls how long an app can take to start up before the server gives up.</p>
+          
+            <table class="params">
+              <colgroup>
+                <col style="width: 105px"></col>
+                <col style="width: 90px"></col>
+                <col style="width: 90px"></col>
+                <col></col>
+                <col style="width: 90px"></col>
+              </colgroup>
+              <tr>
+                <th>Parameter</th>
+                <th>Data type</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+              
+                <tr>
+                  <td>seconds</td>
+                  <td>Float</td>
+                  <td>optional</td>
+                  <td>The number of seconds that an app can take while starting up before the server gives up. Negative values mean wait forever.</td>
+                  <td>60000</td>
+                </tr>
+              
+            </table>
+          
+
+          <p>
+            <label>Applies to:</label> <code><a href="#location">location</a></code><br/>
+            <label>Inheritable:</label> Yes<br/>
+            
+          </p>
+        </li>
+      
+        <li>
+          <h3 class="code"><a name="shutdown_delay"></a>shutdown_delay</h3>
+          <p class="desc">When an app process reaches zero concurrent users, controls how long to wait for a new user to show up before shutting down.</p>
+          
+            <table class="params">
+              <colgroup>
+                <col style="width: 105px"></col>
+                <col style="width: 90px"></col>
+                <col style="width: 90px"></col>
+                <col></col>
+                <col style="width: 90px"></col>
+              </colgroup>
+              <tr>
+                <th>Parameter</th>
+                <th>Data type</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>
+              
+                <tr>
+                  <td>seconds</td>
+                  <td>Float</td>
+                  <td>optional</td>
+                  <td>The number of seconds that an app should wait before shutting down. Negative values mean the app should not shut down.</td>
+                  <td>5000</td>
+                </tr>
+              
+            </table>
+          
+
+          <p>
+            <label>Applies to:</label> <code><a href="#location">location</a></code><br/>
+            <label>Inheritable:</label> Yes<br/>
             
           </p>
         </li>
