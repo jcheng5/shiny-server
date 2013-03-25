@@ -1,0 +1,27 @@
+shiny-server 0.3.4
+--------------------------------------------------------------------------------
+
+* You can now force an app to restart by calling "touch restart.txt" in the app
+  directory root. Existing sessions will not be terminated, but the next session
+  to be initiated will cause a new R process to be launched.
+
+shiny-server 0.3.3
+--------------------------------------------------------------------------------
+
+* Remove pausing which is causing corruption in proxied HTTP request bodies.
+
+shiny-server 0.3.2
+--------------------------------------------------------------------------------
+
+* Make shiny-server compatible with httpuv package which we are introducing to
+  Shiny.
+
+shiny-server 0.3.1
+--------------------------------------------------------------------------------
+
+* Fix crashing bug when "req" object has no address.
+
+shiny-server 0.3.0
+--------------------------------------------------------------------------------
+
+* Initial release.
